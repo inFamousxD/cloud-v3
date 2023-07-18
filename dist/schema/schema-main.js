@@ -5,11 +5,15 @@ const graphql_1 = require("graphql");
 const graphql_2 = require("graphql");
 const schema_users_1 = require("./schema-users");
 exports.rootQuery = new graphql_2.GraphQLObjectType({
-    name: "RootQuery",
+    name: "rootQuery",
     fields: () => ({
         user: {
             type: schema_users_1.userType,
-            resolve: () => ({ name: "abc" }),
+            args: {
+                _id: { type: (0, graphql_1.GraphQLNonNull)(graphql_1.GraphQLString) }
+            },
+            resolve: (parent, args) => {
+            },
         },
     }),
 });

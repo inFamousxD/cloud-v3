@@ -8,7 +8,7 @@ exports.userType = new graphql_1.GraphQLObjectType({
     name: "user",
     description: "Fetch a single user and all it's underlying contents",
     fields: () => ({
-        id: { type: (0, graphql_1.GraphQLNonNull)(graphql_1.GraphQLString) },
+        _id: { type: (0, graphql_1.GraphQLNonNull)(graphql_1.GraphQLString) },
         name: { type: graphql_1.GraphQLString },
         notes: { type: new graphql_1.GraphQLList(schema_notes_1.notesType) },
         watchlist: { type: new graphql_1.GraphQLList(schema_watchlist_1.watchListType) }

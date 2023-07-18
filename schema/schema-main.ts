@@ -1,13 +1,18 @@
-import { GraphQLSchema } from 'graphql';
+import { GraphQLNonNull, GraphQLSchema, GraphQLString } from 'graphql';
 import { GraphQLObjectType } from "graphql";
 import { userType } from "./schema-users";
 
 export const rootQuery = new GraphQLObjectType({
-    name: "RootQuery",
+    name: "rootQuery",
     fields: () => ({
         user: {
             type: userType,
-            resolve: () => ({ name: "abc" }),
+			args: {
+				_id: { type: GraphQLNonNull(GraphQLString) }
+			},
+            resolve: (parent, args) => {
+				
+			},
         },
     }),
 });
