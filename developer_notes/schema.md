@@ -1,15 +1,22 @@
 GraphQL Schema
 
++--+
+
 User
 
 userId: string (uuid)
 name: string
 password: string (hashed & salted)
+createdAt: dateTime
+
++--+
 
 Folder (Notes)
 
 folderId: string (uuid)
-name: 
+name: string
+createdAt: dateTime
+createdBy: string (uuid, reference -> userId)
 
 Notes
 
@@ -19,3 +26,5 @@ body: string
 createdAt: dateTime
 createdBy: string (uuid, reference)
 folderId: string (uuid, reference -> folderId)
+
++--+
